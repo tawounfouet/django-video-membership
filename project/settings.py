@@ -28,11 +28,12 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+     'allauth.account.middleware.AccountMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'videoservice.urls'
+ROOT_URLCONF = 'project.urls'
 
 TEMPLATES = [
     {
@@ -50,7 +51,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'videoservice.wsgi.application'
+WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': {
@@ -88,13 +89,17 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
 
 if DEBUG:
-    STRIPE_PUBLISHABLE_KEY = ''
-    STRIPE_SECRET_KEY = ''
+    STRIPE_PUBLISHABLE_KEY = 'your_key'
+    STRIPE_SECRET_KEY = 'your_key'
 
 else:
     # live keys
-    STRIPE_PUBLISHABLE_KEY = ''
-    STRIPE_SECRET_KEY = ''
+    STRIPE_PUBLISHABLE_KEY = 'your_key'
+    STRIPE_SECRET_KEY = 'your_key'
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 # Django allauth
 
