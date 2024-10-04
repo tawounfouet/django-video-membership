@@ -1,3 +1,5 @@
+# Now Using Django==3.2.25
+
 asgiref==3.7.2
 certifi==2024.8.30
 chardet==5.2.0
